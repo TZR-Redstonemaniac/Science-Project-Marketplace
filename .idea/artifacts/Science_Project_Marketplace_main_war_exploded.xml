@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Science_Project_Marketplace.main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Science_Project_Marketplace_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Science_Project_Marketplace.main" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Science_Project_Marketplace.main/web/Web Gradle : Science_Project_Marketplace-1.0-SNAPSHOT.war" />
+    </root>
+  </artifact>
+</component>

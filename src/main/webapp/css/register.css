@@ -1,0 +1,364 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+.Main_Div {
+  width: 100%;
+  height: 1080px;
+  background: rgba(11,61,145,1);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.Email_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: absolute;
+  top: 361px;
+  left: 477px;
+  overflow: hidden;
+}
+
+.Sub_Email_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,0);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.Email_Input {
+  width: 125px;
+  color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 22px;
+  left: 17px;
+  font-family: Barlow, serif;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+
+.Username_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: absolute;
+  top: 437px;
+  left: 477px;
+  overflow: hidden;
+}
+
+.Sub_Username_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,0);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.Username_Input {
+  width: 92px;
+  color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 23px;
+  left: 17px;
+  font-family: Roboto, serif;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+
+.Password_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: absolute;
+  top: 514px;
+  left: 477px;
+  overflow: hidden;
+}
+
+.Sub_Password_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,0);
+  overflow: hidden;
+}
+
+.Password_Input {
+  width: 152px;
+  color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 23px;
+  left: 17px;
+  font-family: Roboto, serif;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+
+.Confirm_Password_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: absolute;
+  top: 590px;
+  left: 477px;
+  overflow: hidden;
+}
+
+.Sub_Confirm_Password_Div {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,0);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,0);
+  overflow: hidden;
+}
+
+.Confirm_Password_Input {
+  width: 166px;
+  color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 23px;
+  left: 17px;
+  font-family: Roboto, serif;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+
+.Submit_Div {
+  width: 488px;
+  height: 68px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 683px;
+  left: 477px;
+  overflow: hidden;
+}
+
+.Sub_Submit_Div {
+  width: 488px;
+  height: 68px;
+  background: rgba(252,61,33,0);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(252,61,33,1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.Submit_Input {
+  width: 80px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 17px;
+  left: 203px;
+  font-family: Roboto, serif;
+  font-weight: bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: center;
+}
+
+.Sign_Up {
+  width: 210px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 285px;
+  left: 614px;
+  font-family: Barlow, serif;
+  font-weight: Bold;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+
+.v18_4 {
+  width: 100%;
+  height: 169px;
+  background: rgba(8,42,99,1);
+  opacity: 1;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+}
+
+.v18_7 {
+  width: 100%;
+  height: 169px;
+  background: rgba(8,42,99,1);
+  opacity: 1;
+  position: absolute;
+  top: 866px;
+  left: 1px;
+  overflow: hidden;
+}
+
+.Login {
+  width: 311px;
+  height: 68px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 50px;
+  left: 1050px;
+  overflow: hidden;
+}
+
+.Sub_Login {
+  width: 311px;
+  height: 68px;
+  background: rgba(252,61,33,1);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(252,61,33,1);
+}
+
+.Login_Input {
+  width: 100px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 20px;
+  left: 105px;
+  font-family: Roboto, serif;
+  font-weight: bold;
+  font-size: 25px;
+  opacity: 1;
+  text-align: center;
+}
+
+.v25_49 {
+  width: 149px;
+  height: 131px;
+  background: url("../images/v25_49.png") no-repeat center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  overflow: hidden;
+}
+
+.Header {
+  width: 546px;
+  height: 122px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 500px;
+  overflow: hidden;
+}
+
+.Sub_Header {
+  width: 115px;
+  height: 115px;
+  background: rgba(252,61,33,1);
+  opacity: 1;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  border: 6px solid rgba(255,255,255,1);
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.Title {
+  width: 427px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 130px;
+  font-family: Barlow, serif;
+  font-weight: Bold;
+  font-size: 75px;
+  opacity: 1;
+  text-align: left;
+}
+
+.Logo {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 7px;
+}
+
+.input {
+  width: 485px;
+  height: 70px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: -25px;
+  left: -20px;
+  border: 2px solid rgba(0,0,0,1);
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  font-size:24px;
+}
+
+.submit {
+  width: 488px;
+  height: 68px;
+  background: rgba(252,61,33,1);
+  opacity: 1;
+  position: relative;
+  top: -15px;
+  left: -203px;
+  border: 2px solid rgba(252,61,33,1);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size:24px;
+}
