@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+.Main {
+  width: 100%;
+  height: 1021px;
+  background: rgba(11,61,145,1);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.UploadProfilePicture {
+  width: 248px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 575px;
+  left: 54px;
+  font-family: Barlow, serif;
+  font-weight: Bold;
+  font-size: 36px;
+  opacity: 1;
+  text-align: center;
+}
+
+.Header {
+  width: 100%;
+  height: 169px;
+  background: rgba(8,42,99,1);
+  opacity: 1;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+}
+
+.Footer {
+  width: 100%;
+  height: 169px;
+  background: rgba(8,42,99,1);
+  opacity: 1;
+  position: absolute;
+  top: 866px;
+  left: 1px;
+  overflow: hidden;
+}
+
+.NasaLogo {
+  width: 149px;
+  height: 131px;
+  background: url("../images/Nasa Logo.png") no-repeat center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  overflow: hidden;
+}
+
+.Title {
+  width: 546px;
+  height: 122px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 438px;
+  overflow: hidden;
+}
+
+.TitleText {
+  width: 427px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 0;
+  left: 43px;
+  font-family: Barlow, serif;
+  font-weight: Bold;
+  font-size: 75px;
+  opacity: 1;
+  text-align: left;
+}
+
+.ProfileSettingTitle {
+  width: 248px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 224px;
+  left: calc(50vw - 124px);
+  font-family: Barlow, serif;
+  font-weight: Bold;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+
+.Email {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 291px;
+  left: calc(50vw - 244px);
+  overflow: hidden;
+}
+
+.EmailInput {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.Username {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 366px;
+  left: calc(50vw - 244px);
+  overflow: hidden;
+}
+
+.UsernameInput {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.CurrentPassword {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 444px;
+  left: calc(50vw - 244px);
+  overflow: hidden;
+}
+
+.CurrentPasswordInput {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.NewPassword {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 519px;
+  left: calc(50vw - 244px);
+  overflow: hidden;
+}
+
+.NewPasswordInput {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.DateOfBirth {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 594px;
+  left: calc(50vw - 244px);
+  overflow: hidden;
+}
+
+.DateOfBirthInput {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.Tags {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 669px;
+  left: calc(50vw - 244px);
+  overflow: hidden;
+}
+
+.TagsInput {
+  width: 488px;
+  height: 67px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(0,0,0,1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.SaveChanges {
+  width: 488px;
+  height: 68px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 752px;
+  left: calc(50vw - 244px);
+  overflow: hidden;
+}
+
+.SaveChangesBackground {
+  width: 488px;
+  height: 68px;
+  background: rgba(252,61,33,1);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid rgba(252,61,33,1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.SaveChangesText {
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 17px;
+  left: 154px;
+  font-family: Roboto, serif;
+  font-weight: bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: center;
+}
+
+.ProfilePicture {
+  width: 150px;
+  height: 150px;
+  background: url("../images/Profile Picture.png") no-repeat center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 467px;
+  left: 127px;
+  overflow: hidden;
+}
+

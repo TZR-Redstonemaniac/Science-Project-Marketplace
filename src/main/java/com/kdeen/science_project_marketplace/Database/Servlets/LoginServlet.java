@@ -28,7 +28,7 @@ public class LoginServlet  extends HttpServlet {
             Connection conn = DriverManager.getConnection(url);
             Statement stmt  = conn.createStatement();
 
-            String sql = "SELECT email, password, salt from Accounts";
+            String sql = "SELECT id, email, password, salt from Accounts";
             ResultSet rs = stmt.executeQuery(sql);
 
             String email = request.getParameter("email");
@@ -42,11 +42,14 @@ public class LoginServlet  extends HttpServlet {
             while (rs.next()){
                 if (email.equals(rs.getString("email")) && password.equals(rs.getString("password"))){
                     loggedIn = true;
+
+                    sql = "UPDATE CurrentUser SET userId = " + rs.getInt("id") + " WHERE id = 0";
+                    stmt.execute(sql);
                 }
             }
 
             request.setAttribute("loggedIn", loggedIn);
-            request.getRequestDispatcher("loginResult.jsp").forward(request, response);
+            request.getRequestDispatcher("loadProjects").forward(request, response);
 
         } catch (SQLException | ServletException e) {
             LOGGER.log(Level.WARNING, e.getMessage());

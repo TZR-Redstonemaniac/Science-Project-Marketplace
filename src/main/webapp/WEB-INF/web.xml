@@ -3,4 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
+
+    <servlet-mapping>
+        <servlet-name>loadProjects</servlet-name>
+        <url-pattern/>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loadProjects</servlet-name>
+        <servlet-class>com.kdeen.science_project_marketplace.Database.Servlets.LoadProjectsServlets</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loadProjects</servlet-name>
+        <url-pattern>/loadProjects</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>saveProfile</servlet-name>
+        <servlet-class>com.kdeen.science_project_marketplace.Database.Servlets.SaveProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>saveProfile</servlet-name>
+        <url-pattern>/saveProfile</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,69 +1,125 @@
+<%--suppress ALL --%>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet" />
-  <link href="./css/index.css" rel="stylesheet" />
-  <title>Document</title>
-</head>
-<body>
-<div class="v14_35">
-  <div class="v11_36">
-    <div class="v11_37"></div>
-    <span class="v11_38">Search</span>
-    <div class="v11_41"></div>
-  </div>
-  <div class="v14_36"></div>
-  <span class="v14_38">Name</span><span class="v14_40">Tags</span>
-  <div class="v14_42"></div>
-  <span class="v14_59">Name</span><span class="v14_60">Description</span><span class="v14_61">Tags</span>
-  <div class="v14_62"></div>
-  <div class="v14_72"></div>
-  <span class="v14_73">Name</span><span class="v14_75">Tags</span>
-  <div class="v14_76"></div>
-  <span class="v14_77">Name</span><span class="v14_79">Tags</span>
-  <div class="v14_80"></div>
-  <span class="v31_7">Name</span><span class="v31_9">Tags</span>
-  <div class="v31_10"></div>
-  <span class="v31_11">Name</span><span class="v31_12">Description</span><span class="v31_13">Tags</span>
-  <div class="v31_14"></div>
-  <div class="v31_15"></div>
-  <span class="v31_16">Name</span><span class="v31_18">Tags</span>
-  <div class="v31_19"></div>
-  <span class="v31_20">Name</span><span class="v31_22">Tags</span>
-  <div class="v31_23"></div>
-  <span class="v31_24">Name</span><span class="v31_26">Tags</span>
-  <div class="v31_27"></div>
-  <span class="v31_28">Name</span><span class="v31_29">Description</span><span class="v31_30">Tags</span>
-  <div class="v31_31"></div>
-  <span class="v30_106">Tags</span><span class="v30_110">Tags</span>
-  <div class="v14_63"></div>
-  <span class="v14_64">Name</span><span class="v14_66">Tags</span>
-  <div class="v14_67"></div>
-  <span class="v14_68">Name</span><span class="v14_69">Description</span><span class="v14_70">Tags</span>
-  <div class="v14_71"></div>
-  <div class="v30_97"></div>
-  <div class="v30_113"></div>
-  <div class="v30_98"></div>
-  <div class="v30_99">
-    <div class="v30_100"></div>
-    <span class="v30_101">JOINT.COM</span>
-  </div>
-  <span class="v30_112">J</span>
-  <div class="v30_114"></div>
-  <span class="v30_116">RECOMMENDED TAGS:</span>
-  <div class="v30_117"></div>
-  <div class="v30_118"></div>
-  <div class="v30_119"></div>
-  <div class="v30_120"></div>
-  <div class="name"></div>
-  <div class="name"></div>
-  <span class="v30_123">HOT PROJECTS:</span>
-  <div class="v41_125"></div>
-  <div class="v41_132"></div>
-  <div class="v41_126"></div>
-  <span class="v41_128">PROJECT #1</span><span class="v41_129">PROJECT #2</span><span class="v41_131">PREFERRED WORK TIME RANGE</span><span class="v41_134">1-2 HOURS/DAY</span><span class="v41_135">30-45 MINS/DAY</span><span class="v41_136">3-4 HOURS/DAY</span><span class="v41_138">5-6 HOURS/DAY</span>
-</div>
-</body>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet" />
+    <link href="./css/index.css?v=1" rel="stylesheet"/>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="Main">
+      <div class="Search">
+        <div class="Search_Box"></div>
+        <input type="text" class="Search_Input" placeholder="Search" id="search">
+        <div class="Search_Icon"></div>
+      </div>
+
+      <div class="ProjectScrollBox">
+        <% List<String> names = (List<String>) request.getAttribute("projectNames"); %>
+        <% List<String> descriptions = (List<String>) request.getAttribute("projectDescriptions"); %>
+        <% List<String> tags = (List<String>) request.getAttribute("projectTags"); %>
+        <% if (names != null && descriptions != null && tags != null) { %>
+          <% for (int i = 0; i < names.size(); i++) { %>
+            <div class="Project<%=i%>" id="<%= names.get(i) %>">
+              <img src="images/favicon-16x16.png" class="Image" alt="">
+              <span class="Name">Name: <%= names.get(i) %></span>
+              <span class="Description">Description: <%= descriptions.get(i) %></span>
+              <span class="Tags">Tags: <%= tags.get(i) %></span>
+            </div>
+
+            <style>
+              .Project<%=i%> {
+                width: 678px;
+                height: 258px;
+                background: rgba(252,61,33,1);
+                opacity: 1;
+                position: absolute;
+                top: <%= (290 * i) %>px;
+                left: 0;
+                overflow: hidden;
+              }
+            </style>
+          <% } %>
+        <% } %>
+      </div>
+
+      <div class="Header_Bar">
+        <div class="Logo"></div>
+        <div class="Title">
+          <div class="Joint_Logo_Background">
+            <img class="Joint_Logo" src="images/android-chrome-512x512.png" alt="">
+          </div>
+          <span class="Joint_Title">Joint</span>
+        </div>
+
+        <% if (request.getAttribute("loggedIn") == null || !(boolean) request.getAttribute("loggedIn")) { %>
+          <div class="Login">
+            <div class="LoginBackground"></div>
+            <a class="LoginInput" href="login.jsp">Login</a>
+          </div>
+
+          <div class="Signup">
+            <div class="SignupBackground"></div>
+            <a class="SignupInput" href="register.jsp">Signup</a>
+          </div>
+        <% } else { %>
+          <form action="profile" method = "POST">
+            <div class="Profile">
+              <input type="submit" class="ProfileInput">
+            </div>
+          </form>
+        <% } %>
+      </div>
+
+      <div class="Sidebar">
+        <span class="Recommended_Tags_Text">RECOMMENDED TAGS:</span>
+        <div class="Recommended_Tag_1"></div>
+        <div class="Recommended_Tag_2"></div>
+        <div class="Recommended_Tag_3"></div>
+        <div class="Recommended_Tag_4"></div>
+
+        <span class="Hot_Projects_Text">Hot Projects:</span>
+        <div class="Hot_Project_1">
+          <span class="Hot_Project_1_Text">PROJECT #1</span>
+        </div>
+        <div class="Hot_Project_2">
+          <span class="Hot_Project_2_Text">PROJECT #2</span>
+        </div>
+
+        <span class="Preferred_Time_Range_Text">PREFERRED WORK TIME RANGE</span>
+        <span class="Thirty-FortyFive_MinutesADay">30-45 MINS/DAY</span>
+        <span class="One-Two_HoursADay">1-2 HOURS/DAY</span>
+        <span class="Three-Four_HoursADay">3-4 HOURS/DAY</span>
+        <span class="Five-Six_HoursADay">5-6 HOURS/DAY</span>
+
+        <div class="Preferred_Time_Range_Check_Boxes"></div>
+      </div>
+    </div>
+    <script>
+      const search = document.getElementById("search");
+      let projectDiv = null
+      let jspVariable = null
+
+      search.addEventListener("input", function () {
+        let i = 0
+        <% if (names != null) { %>
+          <% for (String name : names) { %>
+            projectDiv = document.getElementById("<%= name %>");
+            jspVariable = "<%= name %>".toLowerCase();
+            projectDiv.hidden = !jspVariable.includes(search.value);
+
+            if (!projectDiv.hidden) {
+              projectDiv.className = "Project" + i
+              i++;
+            } else {
+              projectDiv.className = ""
+            }
+          <% } %>
+        <% } %>
+      });
+    </script>
+  </body>
 </html>
