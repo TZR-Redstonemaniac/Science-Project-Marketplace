@@ -44,9 +44,11 @@ public class LoginServlet  extends HttpServlet {
                     loggedIn = true;
 
                     sql = "UPDATE CurrentUser SET userId = " + rs.getInt("id") + " WHERE id = 0";
-                    stmt.execute(sql);
+                    stmt.executeUpdate(sql);
                 }
             }
+
+            conn.close();
 
             request.setAttribute("loggedIn", loggedIn);
             request.getRequestDispatcher("loadProjects").forward(request, response);

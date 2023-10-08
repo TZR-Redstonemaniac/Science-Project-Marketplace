@@ -305,15 +305,13 @@ body {
 }
 
 .ProfileInput {
+  width: 100px;
+  height: 100px;
   color: rgba(255,255,255,1);
   position: absolute;
   top: 0;
   left: 0;
-  font-family: Roboto, serif;
-  font-weight: bold;
-  font-size: 25px;
   opacity: 1;
-  text-align: center;
   background: url("../images/Profile Picture.png");
 }
 

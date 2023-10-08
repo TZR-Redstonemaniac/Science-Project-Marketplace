@@ -26,4 +26,13 @@
         <servlet-name>saveProfile</servlet-name>
         <url-pattern>/saveProfile</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>viewProject</servlet-name>
+        <servlet-class>com.kdeen.science_project_marketplace.Database.Servlets.ViewProjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>viewProject</servlet-name>
+        <url-pattern>/viewProject</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -21,11 +21,12 @@
         <% List<String> names = (List<String>) request.getAttribute("projectNames"); %>
         <% List<String> descriptions = (List<String>) request.getAttribute("projectDescriptions"); %>
         <% List<String> tags = (List<String>) request.getAttribute("projectTags"); %>
-        <% if (names != null && descriptions != null && tags != null) { %>
+        <% List<String> details = (List<String>) request.getAttribute("projectDetails"); %>
+        <% if (names != null && descriptions != null && tags != null && details != null) { %>
           <% for (int i = 0; i < names.size(); i++) { %>
             <div class="Project<%=i%>" id="<%= names.get(i) %>">
               <img src="images/favicon-16x16.png" class="Image" alt="">
-              <span class="Name">Name: <%= names.get(i) %></span>
+              <a class="Name" id="<%= i %>">Name: <%= names.get(i) %></a>
               <span class="Description">Description: <%= descriptions.get(i) %></span>
               <span class="Tags">Tags: <%= tags.get(i) %></span>
             </div>
@@ -68,7 +69,7 @@
         <% } else { %>
           <form action="profile" method = "POST">
             <div class="Profile">
-              <input type="submit" class="ProfileInput">
+              <input type="image" class="ProfileInput" src="images/Profile Picture.png">
             </div>
           </form>
         <% } %>
@@ -96,6 +97,7 @@
         <span class="Five-Six_HoursADay">5-6 HOURS/DAY</span>
 
         <div class="Preferred_Time_Range_Check_Boxes"></div>
+        <input type="hidden" name="hiddenId" id="hiddenId"/>
       </div>
     </div>
     <script>
@@ -120,6 +122,18 @@
           <% } %>
         <% } %>
       });
+
+      <% for (int i = 0; i < names.size(); i++) { %>
+        document.getElementById("<%= i %>").addEventListener("click", function(event) {
+          // Prevent the default behavior of the link (preventing the immediate redirection)
+          event.preventDefault();
+
+          document.getElementById("hiddenId").value = <%= i %>
+
+          // After setting the attribute, you can redirect to the destination URL
+          window.location.href = "viewProject?hiddenId=<%= i %>";
+        });
+      <% } %>
     </script>
   </body>
 </html>

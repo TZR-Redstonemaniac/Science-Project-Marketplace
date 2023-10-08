@@ -32,38 +32,31 @@ public class SaveProfileServlet extends HttpServlet {
             String sql = "SELECT userId from CurrentUser";
             int currentUser = stmt.executeQuery(sql).getInt("userId");
 
+            String salt = PasswordHelper.getSalt();
+            String userPasswordToHash =
+                    stmt.executeQuery(("SELECT password from Accounts where id = " + currentUser)).getString("password");
+            String userPassword = PasswordHelper.HashPassword(userPasswordToHash, salt);
+
             PreparedStatement pstmt = null;
 
             if (request.getParameter("CurrentPasswordInput") != null
                     && request.getParameter("NewPasswordInput") != null){
-                String salt = PasswordHelper.getSalt();
-
                 String currentPasswordToHash = request.getParameter("CurrentPasswordInput");
                 String currentPassword = PasswordHelper.HashPassword(currentPasswordToHash, salt);
 
-                String userPasswordToHash =
-                        stmt.executeQuery(("SELECT password from Accounts where id = " + currentUser)).getString(
-                                "password");
-                String userPassword = PasswordHelper.HashPassword(userPasswordToHash, salt);
-
                 if (currentPassword == userPassword){
-                    sql = "UPDATE Accounts SET email = ?, username = ?," +
-                            "dateOfBirth = ?, tags = ?, password = ? WHERE id = " + currentUser;
+                    sql = "UPDATE Accounts SET password = ? WHERE id = " + currentUser;
                     pstmt = conn.prepareStatement(sql);
 
                     String newPasswordToHash = request.getParameter("NewPasswordInput");
                     String newPassword = PasswordHelper.HashPassword(currentPasswordToHash, salt);
-                    pstmt.setString(5, newPassword);
-                } else {
-                    sql = "UPDATE Accounts SET email = ?, username = ?," +
-                            "dateOfBirth = ?, tags = ? WHERE id = " + currentUser;
-                    pstmt = conn.prepareStatement(sql);
+                    pstmt.setString(1, newPassword);
+                    pstmt.close();
                 }
-            } else {
-                sql = "UPDATE Accounts SET email = ?, username = ?," +
-                        "dateOfBirth = ?, tags = ? WHERE id = " + currentUser;
-                pstmt = conn.prepareStatement(sql);
             }
+
+            sql = "UPDATE Accounts SET email = ?, username = ?," + "dateOfBirth = ?, tags = ? WHERE id = " + currentUser;
+            pstmt = conn.prepareStatement(sql);
 
             pstmt.setString(1, request.getParameter("email"));
             pstmt.setString(2, request.getParameter("username"));
@@ -71,6 +64,9 @@ public class SaveProfileServlet extends HttpServlet {
             pstmt.setString(4, request.getParameter("tags"));
 
             pstmt.executeUpdate();
+            pstmt.close();
+
+            conn.close();
 
             request.setAttribute("loggedIn", true);
             request.getRequestDispatcher("loadProjects").forward(request, response);

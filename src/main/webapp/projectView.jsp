@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet" />
-    <link href="./css/projectCreate.css" rel="stylesheet" />
-    <title>Document</title>
-</head>
-<body>
-<div class="v49_42">
-    <div class="name"></div>
-    <div class="v49_56"></div>
-    <div class="v49_57"></div>
-    <div class="v49_58"></div>
-    <div class="v49_65"></div>
-    <div class="v49_66"></div>
-    <div class="v49_67"></div>
-    <div class="v49_68"></div>
-    <div class="v49_69"></div>
-    <span class="v49_70">+</span><span class="v49_71">+</span><span class="v49_72">+</span><span class="v49_73">+</span><span class="v49_74">ADD PROJECT PHOTO</span><span class="v49_75">ADD PROJECT NAME</span><span class="v62_77">ADD DESCRIPTION </span><span class="v62_78">ADD PROJECT DETAILS</span>
-    <div class="v49_63"></div>
-    <div class="v27_71"></div>
-    <span class="v27_72">J</span><span class="v49_64">J</span><span class="v24_66">  JOINT.COM
-       </span><span class="v49_62">  JOINT.COM
-       </span>
-    <div class="v62_79">
-        <div class="v62_80"></div>
-        <span class="v62_81">CREATE PROJECT</span>
-    </div>
-</div>
-</body>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet" />
+        <link href="css/projectView.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="Main">
+            <div class="Footer"></div>
+            <div class="Header"></div>
+            <div class="NasaLogo"></div>
+            <div class="Sidebar"></div>
+            <div class="ProjectPhoto">
+                <img class="ProjectPhotoImage" src="images/android-chrome-512x512.png" alt="">
+            </div>
+            <div class="ProjectName">
+                <span class="ProjectNameText"><%= request.getAttribute("name") %></span>
+            </div>
+            <div class="Description">
+                <span class="DescriptionText"><%= request.getAttribute("description") %></span>
+            </div>
+            <div class="Details">
+                <span class="DetailsText"><%= request.getAttribute("detail") %></span>
+            </div>
+            <div class="Header_Bar">
+                <div class="Logo"></div>
+                <div class="Title">
+                    <div class="Joint_Logo_Background">
+                        <img class="Joint_Logo" src="images/android-chrome-512x512.png" alt="">
+                    </div>
+                    <span class="Joint_Title">Joint</span>
+                </div>
+
+                <% if (request.getAttribute("loggedIn") == null || !(boolean) request.getAttribute("loggedIn")) { %>
+                <div class="Login">
+                    <div class="LoginBackground"></div>
+                    <a class="LoginInput" href="login.jsp">Login</a>
+                </div>
+
+                <div class="Signup">
+                    <div class="SignupBackground"></div>
+                    <a class="SignupInput" href="register.jsp">Signup</a>
+                </div>
+                <% } else { %>
+                <form action="profile" method = "POST">
+                    <div class="Profile">
+                        <input type="image" class="ProfileInput" src="images/Profile Picture.png" alt="">
+                    </div>
+                </form>
+                <% } %>
+            </div>
+        </div>
+    </body>
 </html>

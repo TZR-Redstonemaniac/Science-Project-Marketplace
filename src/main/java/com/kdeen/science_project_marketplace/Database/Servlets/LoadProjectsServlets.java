@@ -37,25 +37,30 @@ public class LoadProjectsServlets extends HttpServlet {
             Connection conn = DriverManager.getConnection(url);
             Statement stmt = conn.createStatement();
 
-            String sql = "SELECT name, description, tags from Projects";
+            String sql = "SELECT name, description, tags, details from Projects";
             ResultSet rs = stmt.executeQuery(sql);
 
             List<String> projectNames = new ArrayList<>();
             List<String> projectDescriptions = new ArrayList<>();
             List<String> projectTags = new ArrayList<>();
+            List<String> projectDetails = new ArrayList<>();
 
             while (rs.next()){
                 projectNames.add(rs.getString("name"));
                 projectDescriptions.add(rs.getString("description"));
                 projectTags.add(rs.getString("tags"));
+                projectDetails.add(rs.getString("details"));
             }
 
             request.setAttribute("projectNames", projectNames);
             request.setAttribute("projectDescriptions", projectDescriptions);
             request.setAttribute("projectTags", projectTags);
+            request.setAttribute("projectDetails", projectDetails);
 
             if (stmt.executeQuery("SELECT userId from CurrentUser").getInt("userId") > -1)
                 request.setAttribute("loggedIn", true);
+
+            conn.close();
 
             request.getRequestDispatcher("index.jsp").forward(request, response);
 
